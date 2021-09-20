@@ -1,0 +1,34 @@
+npm init -y                 #create package.json
+yarn add -D typescript      #add dependency for ts & yarn.lock file
+npx tsc --init              #create a tsconfig file
+yarn build                  #to transpile into js file the ts file with src code
+node src/index.js           #to execute js file with node
+yarn add -D ts-node         #to avoid repetition of point 4&5 every single time ( )
+
+***add a script into package.json "start":"ts-node src/index.ts"
+
+yarn start                  #starts the index.ts file
+yarn add -D ts-node-dev     #same as nodemon -> modify the "start" script with ts-node-dev --respawn
+yarn add nodemon            #previous may not work properly on WIN so use nodemon (moved up into devDependencies)
+
+**if you use nodemon, use yarn dev instead of yarn start (because of the changes made into package.json)
+
+yarn add express            #javascript library
+yarn add -D @types/express  #add type definition
+yarn add -D @types/node     #gives us access to type definitions for nodejs packages (*)
+
+(*) because of node.js is written in javascript, we need to add third-party packages called types to deal with typescript
+do it almost everytime you install package 
+but, if we don't have the types for a javascript library do the following(*)
+
+create new folder called @types and add file inside called with the same name of the module -> shortid used in this example
+yarn add shortid
+create the file shortid.d.ts
+do the import into index.ts -> the type will be "any"
+
+do the necessary imports
+(*)in case you have red squiggles restart typescript server from vscode palette(*)
+
+create the server as per node.js docs
+
+
