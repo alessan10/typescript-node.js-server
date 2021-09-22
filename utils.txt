@@ -30,5 +30,16 @@ do the necessary imports
 (*)in case you have red squiggles restart typescript server from vscode palette(*)
 
 create the server as per node.js docs
+DO THE CODE!
 
 
+
+b? = b could be optional
+b! = b is not going to be undefined or you are telling ts "just leave me alone"
+
+interface is an object with values inside
+
+type .. {} is everything else
+so use interface to create objects and type to create anithing else
+
+type func = () => void; is a function that takes no parameters and returns void
