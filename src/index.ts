@@ -1,8 +1,12 @@
 import express from "express";
 import { homeRouter } from "./routes/homeRoutes";
+import {DynamoDB, S3} from "aws-sdk"
 
 //EXPRESS INIT 
 const app = express();
+const dynamoDB = new DynamoDB.DocumentClient();
+const s3 = new S3();
+
 app.use(express.json())
 
 //API ROUTING SETUP
