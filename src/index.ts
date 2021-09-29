@@ -17,26 +17,9 @@ app.use('/status', (_, res)=>{
         staus: 'WORKING',
     });
 });
-interface Params{
-    a: number
-    b: number
-}
-
-type Add = (x: Params) => number;
-
-const add: Add = x => {
-    // if (b){
-    //     return a+b;
-    // } else {
-    //     return a;
-    // }
-    return x.a + x.b!;
-}
-
-console.log("res: ",add({a: 1, b: 2}));
 
 app.listen(3001, ()=> {
-    console.log("started")
+    console.log("server listening on port 3001")
 })
 
 export default app;

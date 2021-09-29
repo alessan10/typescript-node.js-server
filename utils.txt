@@ -43,3 +43,16 @@ type .. {} is everything else
 so use interface to create objects and type to create anithing else
 
 type func = () => void; is a function that takes no parameters and returns void
+
+//AWS start from here
+0 - import aws-sdk
+1 - download docker cli & docker image for dynamoDB local
+2 - run docker container
+https://www.youtube.com/watch?v=ZHMHQmCLakA
+3 - from docker cli, run aws configure to set fake credentials
+4 - to connect with dynamoDB local instance, run from aws cli: aws dynamodb list-tables --endpoint-url http://localhost:port where container is running
+5 - create a table:
+
+aws dynamodb create-table --table-name Music --attribute-definitions AttributeName=Artist,AttributeType=S AttributeName=SongTitle,AttributeType=S --key-schema AttributeName=Artist,KeyType=HASH AttributeName=SongTitle,KeyType=RANGE --provisioned-throughput ReadCapacityUnits=10,WriteCapacityUnits=5
+
+6 - 9:04 create table doesn't work - issue with credentials
